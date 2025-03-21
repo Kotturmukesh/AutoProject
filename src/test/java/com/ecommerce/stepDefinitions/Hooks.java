@@ -46,7 +46,10 @@ public class Hooks extends Base{
 
 	@After()
 	public void after() {
-		Base.driver.quit();
+		if (Base.driver != null) {
+            Base.driver.quit();
+            Base.driver = null; 
+        }
 	}
 	
 
